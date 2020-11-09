@@ -33,7 +33,7 @@ public class UniLinksPlugin
         String action = intent.getAction();
 
 
-        if (Intent.ACTION_VIEW.equals(action) && ((intent.getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) == 0)) {
+        if (Intent.ACTION_VIEW.equals(action) && (intent.getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) == Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) {
             String dataString = intent.getDataString();
             if (initialIntent) {
                 initialLink = dataString;
