@@ -36,7 +36,7 @@ public class UniLinksPlugin
         if (Intent.ACTION_VIEW.equals(action) && (intent.getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) != Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) {
             String dataString = intent.getDataString();
             if (initialIntent) {
-                initialLink = dataString;
+                initialLink = null;
                 initialIntent = false;
             }
             latestLink = dataString;
