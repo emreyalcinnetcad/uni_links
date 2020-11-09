@@ -33,7 +33,7 @@ public class UniLinksPlugin
     private void handleIntent(Context context, Intent intent) {
         String action = intent.getAction();
 
-        intentBilgi=intent.toString();
+        intentBilgi=Integer.toString(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY);
 
         if (Intent.ACTION_VIEW.equals(action) && (intent.getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) != Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) {
             String dataString = intent.getDataString();
