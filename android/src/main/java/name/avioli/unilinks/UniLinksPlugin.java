@@ -26,12 +26,14 @@ public class UniLinksPlugin
 
     private String initialLink;
     private String latestLink;
+    private String intentBilgi;
     private Context context;
     private boolean initialIntent = true;
 
     private void handleIntent(Context context, Intent intent) {
         String action = intent.getAction();
 
+        intentBilgi=intent.toString();
 
         if (Intent.ACTION_VIEW.equals(action) && (intent.getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) != Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) {
             String dataString = intent.getDataString();
@@ -111,7 +113,12 @@ public class UniLinksPlugin
             result.success(initialLink);
         } else if (call.method.equals("getLatestLink")) {
             result.success(latestLink);
-        } else {
+
+        }else if (call.method.equals("intentBilgi")){
+            result.success(intentBilgi);
+        }
+
+        else {
             result.notImplemented();
         }
     }
