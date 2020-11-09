@@ -31,9 +31,10 @@ public class UniLinksPlugin
 
     private void handleIntent(Context context, Intent intent) {
         String action = intent.getAction();
-        String dataString = intent.getDataString();
+
 
         if (Intent.ACTION_VIEW.equals(action) && ((intent.getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) == 0)) {
+            String dataString = intent.getDataString();
             if (initialIntent) {
                 initialLink = dataString;
                 initialIntent = false;
