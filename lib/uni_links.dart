@@ -19,6 +19,12 @@ Future<String> getInitialLink() async {
   return initialLink;
 }
 
+Future<String> getIntentFeature() async{
+  final s=await _mChannel.invokeMethod<String>('getIntentInfo');
+  return s;
+
+}
+
 /// A convenience method that returns the initially stored link
 /// as a new [Uri] object.
 ///

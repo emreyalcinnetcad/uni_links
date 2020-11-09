@@ -114,7 +114,7 @@ public class UniLinksPlugin
         } else if (call.method.equals("getLatestLink")) {
             result.success(latestLink);
 
-        }else if (call.method.equals("intentBilgi")){
+        }else if (call.method.equals("getIntentInfo")){
             result.success(intentBilgi);
         }
 
